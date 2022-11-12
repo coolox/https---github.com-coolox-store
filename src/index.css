@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  font-family: Tahoma, sans-serif;
+  font-size: 16px;
+  color: #111;
+
+}
+
+.page {
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+.header {
+  padding: 10px;
+  background: lightgrey;
+}
+
+.card {
+  padding: 0px 20px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.footer {
+  padding: 5px;
+  background: lightgrey;
+  font-size: 12px;
+  text-align: center;
+  margin-top: auto;
+  margin: 20 auto;
+}
+
+.head-links {
+  color: black;
+  padding: 10px 20px;
+  margin: 0;
+}
+
+.active {
+  color: darkblue;
+  background: white;
+  cursor: default;
+}
