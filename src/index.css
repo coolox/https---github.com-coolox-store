@@ -46,3 +46,11 @@ h2 {
   background: white;
   cursor: default;
 }
+button {
+  margin: 20px 0 0 0;
+}
+
+.edit-link {
+  margin: 0 40px;
+  text-align: right;
+}

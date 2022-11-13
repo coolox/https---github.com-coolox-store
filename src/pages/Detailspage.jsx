@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom'
+import { useParams, Link, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 
 
@@ -6,10 +6,12 @@ import { useState, useEffect } from 'react'
 function Details() {
   
   const { id } = useParams()
+  const navigate = useNavigate()
   const [data, setData] = useState(null)
+  const goBack =() => navigate(-1)
 
   useEffect(() => {
-    fetch(`https://jsonplaceholder.typicode.com/photos/${id}`)
+    fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
       .then(response => response.json())
       .then(json => setData(json))
   },[id])
@@ -19,10 +21,16 @@ function Details() {
       {data && (
         <>
           <h2>{data.title}</h2>
-          <h3>{ id }</h3>
-          <img src={data.thumbnailUrl} alt="" />
+          <p>{data.body}</p>
+          <div className='edit-link'>
+            <Link to={`/products/${id}/edit`} >Изменит продукт</Link>
+          </div>
         </>
       )}
+      <div className='Button'>
+        <button onClick={goBack}>Назад</button>
+      </div>
+      
     </div>
   )
 
